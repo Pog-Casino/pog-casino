@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>POG.CASINO</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap" rel="stylesheet" />
+    <link rel="preload" href="/root.js" as="script" />
+    <link rel="preload" href="/shared-ws-worker.js" as="script" />
+    <link rel="stylesheet" href="/base.css" />
+    <link rel="stylesheet" href="/root.css" />
+    <link rel="stylesheet" href="/index.css" />
+</head>
+<body>
+    <div class="cf-turnstile" data-sitekey="1x00000000000000000000AA" data-callback="turnstileCallback"></div>
+	
+    <main>
+		<section id="logo">
+			<h1>POG<wbr/><span>.</span>CASINO</h1>
+		</section>
+		<section id="content">
+			<h2>Play one of our statistical games, completely free of charge:</h2>
+			<div>
+				<game-card title="Crash" url="/crash" comingSoon="false" image="/placeholder_300x300.png"></game-card>
+				<game-card title="Plinko" url="/plinko" comingSoon="true" image="/placeholder_300x300.png"></game-card>
+				<game-card title="Bingo" url="/bingo" comingSoon="true" image="/placeholder_300x300.png"></game-card>
+			</div>
+		</section>
+	</main>
+
+    <script type="module" src="/root.js" defer></script>
+    <script type="module" src="/components/game-card/index.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js" defer></script>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+</body>
+</html>

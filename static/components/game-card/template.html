@@ -1,0 +1,53 @@
+<template>  
+    <a>
+        <span>Coming Soon</span>
+        <img alt=""/>
+        <h3>Loading...</h3>
+    </a>
+    <link rel="stylesheet" href="/base.css" />
+    <style>
+        a {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            background-color: var(--sub-alt-color);
+            aspect-ratio: 1/1;
+            padding: 0.25rem;
+            border-radius: 0.25rem;
+            user-select: none;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        a > img {
+            border-radius: 0.125rem;
+        }
+
+        a:hover {
+            background-color: var(--sub-color);
+        }
+
+        a > h3 {
+            font-size: 5rem;
+            text-align: center;
+            font-weight: 100;
+        }
+
+        a:hover > h3 {
+            color: var(--main-color);
+        }
+
+        a > span {
+            position: absolute;
+            border-radius: 5rem;
+            background-color: var(--main-color);
+            font-size: 1rem;
+            font-weight: 100;
+            display: inline-block;
+            vertical-align: text-top;
+            padding: 0.5rem;
+            right: 1rem;
+            top: 1rem;
+        }
+    </style>
+</template>

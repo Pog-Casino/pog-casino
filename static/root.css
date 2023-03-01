@@ -1,0 +1,28 @@
+:root {
+    --bg-color:#141221;
+    --main-color:#fd77d7;
+    --caret-color:#dde5ed;
+    --text-color:#dde5ed;
+    --sub-color:#676e8a;
+    --sub-alt-color:#1e1d2f;
+    --font: "Lexend Deca";
+}
+
+html {
+    scrollbar-color: var(--sub-color) transparent;
+    scrollbar-width: thin;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font);
+    min-height: 100vh;
+}
+
+.cf-turnstile {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+    position: absolute;
+}
