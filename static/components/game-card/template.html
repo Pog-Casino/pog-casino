@@ -1,8 +1,8 @@
 <template>  
-    <a>
+    <a x-bind:href="$wca.url" x-bind:style="$wca.comingSoon ? 'pointer-events: none' : ''">
         <span>Coming Soon</span>
-        <img alt=""/>
-        <h3>Loading...</h3>
+        <img x-bind:src="$wca.image" alt=""/>
+        <h3 x-text="$wca.title"></h3>
     </a>
     <link rel="stylesheet" href="/base.css" />
     <style>

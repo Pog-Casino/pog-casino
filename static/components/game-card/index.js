@@ -1,34 +1,35 @@
-if (!customElements.get("game-card")) {
+document.addEventListener("alpine:init", async () => {
   const parser = new DOMParser();
   const resp = await fetch(import.meta.resolve("./template.html"));
   const html = await resp.text();
-  console.log(html);
   const template = parser.parseFromString(html, "text/html").querySelector(
     "template",
   );
+  if (!customElements.get("game-card")) {
+    class Component extends HTMLElement {
+      state = Alpine.reactive({});
 
-  class GameCard extends HTMLElement {
-    constructor() {
-      super();
+      constructor() {
+        super();
 
-      this.attachShadow({ mode: "open" }).appendChild(
-        template.content.cloneNode(true),
-      );
-    }
+        const shadow = this.attachShadow({ mode: "open" });
+        shadow.appendChild(
+          template.content.cloneNode(true),
+        );
 
-    connectedCallback() {
-      const shadow = this.shadowRoot;
-      const a = shadow.querySelector("a");
-      a.href = this.getAttribute("url");
-      const comingSoon = this.getAttribute("comingSoon") == "true";
-      a.style = comingSoon ? "pointer-events: none" : "";
-      const span = a.querySelector("span");
-      if (!comingSoon) {
-        span.remove();
+        Alpine.addScopeToNode(shadow, this.state);
+        Alpine.initTree(shadow);
       }
-      a.querySelector("img").src = this.getAttribute("image");
-      a.querySelector("h3").innerText = this.getAttribute("title");
+
+      connectedCallback() {
+        const shadow = this.shadowRoot;
+        const comingSoon = this.getAttribute("comingSoon") == "true";
+        const span = shadow.querySelector("a > span");
+        if (!comingSoon) {
+          span.remove();
+        }
+      }
     }
+    window.customElements.define("game-card", Component);
   }
-  window.customElements.define("game-card", GameCard);
-}
+});
