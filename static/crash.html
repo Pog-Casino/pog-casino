@@ -12,25 +12,28 @@
     <link rel="preload" href="/shared-ws-worker.js" as="script" />
     <link rel="stylesheet" href="/base.css" />
     <link rel="stylesheet" href="/root.css" />
-    <link rel="stylesheet" href="/index.css" />
+    <link rel="stylesheet" href="/crash.css" />
 </head>
 <body>
-    <main>
-		<section id="logo">
-			<h1>POG<wbr/><span>.</span>CASINO</h1>
-		</section>
-		<section id="content">
-			<h2>Play one of our statistical games, completely free of charge</h2>
-			<div>
-				<game-card title="Crash" url="/crash" comingSoon="false" image="/placeholder_300x300.png"></game-card>
-				<game-card title="Plinko" url="/plinko" comingSoon="true" image="/placeholder_300x300.png"></game-card>
-				<game-card title="Bingo" url="/bingo" comingSoon="true" image="/placeholder_300x300.png"></game-card>
-			</div>
-		</section>
-	</main>
+    <div class="cf-turnstile" data-sitekey="1x00000000000000000000AA" data-callback="turnstileCallback"></div>
+	
+    <game-header></game-header>
+    <div id="crash">
+        <div id="game">
 
+        </div>
 
-    <script type="module" src="/components/game-card/index.js" defer></script>
+        <div id="sidebar">
+            <div id="order-manager">
+                <button x-data x-on:click="$store.account.balance += 1000">Moneten</button>
+            </div>
+            <div id="chat">
+                <chat-display roomId="crash-chat" />
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="/components/game-header/index.js"></script>
     <script type="module" src="/webcomponent-alpine-plugin.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js" defer></script>
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>

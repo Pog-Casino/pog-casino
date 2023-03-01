@@ -1,0 +1,42 @@
+body {
+    height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+#crash {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    padding-top: 0;
+    box-sizing: border-box;
+}
+
+#crash > #game {
+    flex: 0.66 0.66 0;
+    box-sizing: border-box;
+}
+
+#crash > #sidebar {
+    display: flex;
+    flex-direction: column;
+    flex: 0.33 0.33 0;
+    box-sizing: border-box;
+    align-items: stretch;
+}
+
+#crash > #sidebar > #order-manager {
+    flex: 0.5 0.5 0;
+    box-sizing: border-box;
+    max-height: 50%;
+}
+
+#crash > #sidebar > #chat {
+    flex: 0.5 0.5 0;
+    box-sizing: border-box;
+    max-height: 50%;
+}

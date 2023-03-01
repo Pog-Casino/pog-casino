@@ -1,0 +1,43 @@
+<template>
+    <header>
+        <h1 id="logo">POG<span><wbr/>.</span>CASINO</h1>
+        <div id="account">
+            Hi <span x-data x-text="$store.account.username"></span>, your balance: <span id="balance" x-data x-text="$store.account.animatedBalance"></span>
+        </div>
+    </header>
+    <style>
+        header {
+            width: 100vw;
+            height: 4rem;
+            background-color: var(--sub-alt-color);
+            display: flex;
+            flex-direction: row;
+            padding: 0 1rem 0 1rem;
+            box-sizing: border-box;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #logo {
+            font-size: 4rem;
+            font-weight: 600;
+            margin-right: auto;
+            height: fit-content;
+        }
+
+        #account {
+            margin-left: auto;
+            font-size: 2rem;
+            font-weight: 300;
+            height: fit-content;
+        }
+
+        #logo > span {
+            color: var(--main-color);
+        }
+
+        #balance {
+            color: var(--main-color);
+        }
+    </style>
+</template>
