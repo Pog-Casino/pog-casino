@@ -20,15 +20,6 @@ document.addEventListener("alpine:init", async () => {
         Alpine.addScopeToNode(shadow, this.state);
         Alpine.initTree(shadow);
       }
-
-      connectedCallback() {
-        const shadow = this.shadowRoot;
-        const comingSoon = this.getAttribute("comingSoon") == "true";
-        const span = shadow.querySelector("a > span");
-        if (!comingSoon) {
-          span.remove();
-        }
-      }
     }
     window.customElements.define("game-card", Component);
   }
